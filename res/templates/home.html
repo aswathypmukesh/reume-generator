@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="login">
+    {% comment %} <div class="form"> {% endcomment %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style/home.css' %}">
+        <form action="" method="POST" class="form">
+            {% csrf_token %}        
+            {{form}}
+            <button type="submit">Submit</button>
+        </form>
+    {% comment %} </div> {% endcomment %}
+</body>
+</html>

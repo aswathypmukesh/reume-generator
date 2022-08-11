@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume</title>
+</head>
+<body >
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style/resume.css' %}">
+{% block content %} 
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <div id="header"></div>
+        <div class="left"></div>
+        <div class="stuff">
+          <br><br>
+          <h1>Resume</h1>
+          <h2>{{std.name}}</h2>
+          <hr />
+          <br>
+          <p class="head">{{std.address}}</p>
+          <p class="head">{{std.mobile}}</p>
+          <p class="head">{{std.email_id}}</p>
+          <p class="head">{{std.dob}}</p>
+          <p class="head">Description</p>
+          <p>{{std.description}}</p>
+          <p class="head">Education</p>
+          <ul>
+              <li>{{std.edu}}</li>
+          </ul>
+          <p class="head">Experience</p>
+          <ul>
+            <li>{{std.exp}}</li>
+          </ul>
+          <p class="head">Skills</p>
+          <ul>
+            <li>{{std.skill1}}</li>
+            <li>{{std.skill2}}</li>
+            <li>{{std.skill3}}</li>
+            <li>{{std.skill4}}</li>
+          </ul>         
+        </div>
+        <div class="right"></div>
+        <div id="footer">
+          <h2 id="name">{{std.name}}</h2></div>
+    </form>
+{% endblock %}
+</body>
+</html>
